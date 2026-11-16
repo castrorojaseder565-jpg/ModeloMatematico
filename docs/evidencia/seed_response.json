@@ -1,0 +1,46 @@
+{
+  "status": "Optimal",
+  "objectiveValue": 169.0,
+  "assignments": [
+    {
+      "studentId": 1,
+      "studentName": "Ana García",
+      "tutorId": 1,
+      "tutorName": "Carlos Ruiz",
+      "topic": "Matemáticas",
+      "score": 36
+    },
+    {
+      "studentId": 2,
+      "studentName": "Luis Pérez",
+      "tutorId": 2,
+      "tutorName": "Sandra Mora",
+      "topic": "Física",
+      "score": 21
+    },
+    {
+      "studentId": 3,
+      "studentName": "María López",
+      "tutorId": 1,
+      "tutorName": "Carlos Ruiz",
+      "topic": "Matemáticas",
+      "score": 50
+    },
+    {
+      "studentId": 5,
+      "studentName": "Laura Díaz",
+      "tutorId": 3,
+      "tutorName": "Julián Torres",
+      "topic": "Programación",
+      "score": 32
+    },
+    {
+      "studentId": 6,
+      "studentName": "Andrés Cano",
+      "tutorId": 3,
+      "tutorName": "Julián Torres",
+      "topic": "Programación",
+      "score": 30
+    }
+  ]
+}

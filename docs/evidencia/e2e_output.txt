@@ -1,0 +1,11 @@
+[MySQL] estudiantes=8  tutores=3
+[FastAPI] status=Optimal  objectiveValue=169.0
+Estudiante    Tutor           Área          Score
+María López   Carlos Ruiz     Matemáticas      50
+Ana García    Carlos Ruiz     Matemáticas      36
+Laura Díaz    Julián Torres   Programación     32
+Andrés Cano   Julián Torres   Programación     30
+Luis Pérez    Sandra Mora     Física           21
+Sin asignar: ['Pedro Gómez', 'Sofía Rojas', 'Camila Vega']
+[Verif] R1, R2 y R3 cumplidas
+[Verif] óptimo por fuerza bruta = 169  |  CBC = 169.0  ->  COINCIDEN

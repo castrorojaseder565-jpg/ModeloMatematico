@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Tutores')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Tutores</h2>
+        <a class="btn btn-primary" th:href="@{/tutors/new}">+ Nuevo tutor</a>
+    </div>
+    <table class="table table-striped table-hover align-middle">
+        <thead class="table-dark">
+        <tr><th>ID</th><th>Nombre</th><th>Especialidad</th><th>Capacidad máxima</th><th>Acciones</th></tr>
+        </thead>
+        <tbody>
+        <tr th:each="t : ${tutors}">
+            <td th:text="${t.id}"></td>
+            <td th:text="${t.name}"></td>
+            <td th:text="${t.specialty}"></td>
+            <td th:text="${t.maxCapacity}"></td>
+            <td>
+                <a class="btn btn-sm btn-warning" th:href="@{/tutors/edit/{id}(id=${t.id})}">Editar</a>
+                <a class="btn btn-sm btn-danger" th:href="@{/tutors/delete/{id}(id=${t.id})}"
+                   onclick="return confirm('¿Eliminar este tutor?')">Eliminar</a>
+            </td>
+        </tr>
+        <tr th:if="${#lists.isEmpty(tutors)}"><td colspan="5" class="text-center text-muted">Sin tutores registrados</td></tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Tutor')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+<div class="container" style="max-width:640px">
+    <h2 th:text="${tutor.id == null} ? 'Nuevo tutor' : 'Editar tutor'">Tutor</h2>
+    <form th:action="@{/tutors/save}" th:object="${tutor}" method="post" class="mt-3">
+        <input type="hidden" th:field="*{id}">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input th:field="*{name}" class="form-control">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Especialidad</label>
+            <input th:field="*{specialty}" class="form-control" placeholder="Ej.: Matemáticas">
+            <span th:if="${#fields.hasErrors('specialty')}" th:errors="*{specialty}" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Capacidad máxima (cupos)</label>
+            <input th:field="*{maxCapacity}" class="form-control" type="number" min="1">
+            <span th:if="${#fields.hasErrors('maxCapacity')}" th:errors="*{maxCapacity}" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+        <a class="btn btn-secondary" th:href="@{/tutors}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>

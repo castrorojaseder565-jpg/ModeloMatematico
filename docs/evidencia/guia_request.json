@@ -1,0 +1,7 @@
+{"students":[
+ {"id":1,"name":"Ana García","topic":"Matemáticas","academicRisk":4,"priority":9},
+ {"id":2,"name":"Luis Pérez","topic":"Física","academicRisk":3,"priority":7},
+ {"id":3,"name":"María López","topic":"Matemáticas","academicRisk":5,"priority":10}],
+ "tutors":[
+ {"id":1,"name":"Carlos Ruiz","specialty":"Matemáticas","maxCapacity":2},
+ {"id":2,"name":"Sandra Mora","specialty":"Física","maxCapacity":1}]}

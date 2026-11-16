@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Dashboard')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+<div class="container">
+    <h1 class="mb-1">EduOptima AI</h1>
+    <p class="text-muted">Asignación óptima de estudiantes a tutores · Spring Boot + MySQL + FastAPI/PuLP</p>
+    <div class="row g-3 mt-2">
+        <div class="col-md-4">
+            <div class="card h-100"><div class="card-body">
+                <h5 class="card-title">Estudiantes</h5>
+                <p class="display-6" th:text="${studentCount}">0</p>
+                <a class="btn btn-primary" th:href="@{/students}">Gestionar</a>
+            </div></div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100"><div class="card-body">
+                <h5 class="card-title">Tutores</h5>
+                <p class="display-6" th:text="${tutorCount}">0</p>
+                <a class="btn btn-primary" th:href="@{/tutors}">Gestionar</a>
+            </div></div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-success"><div class="card-body">
+                <h5 class="card-title">Modelo de optimización</h5>
+                <p class="text-muted">Programación lineal entera (solver CBC)</p>
+                <a class="btn btn-success" th:href="@{/optimize}">Ejecutar Optimización</a>
+            </div></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

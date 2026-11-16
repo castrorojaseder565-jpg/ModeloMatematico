@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Resultado de optimización')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+<div class="container">
+    <h2>Resultado de la optimización</h2>
+
+    <div th:if="${error}" class="alert alert-danger mt-3" th:text="${error}"></div>
+
+    <div th:if="${response != null}">
+        <div class="row my-3">
+            <div class="col-md-6"><p>Estado del solver: <strong th:text="${response.status}"></strong></p></div>
+            <div class="col-md-6"><p>Valor óptimo (Z): <strong th:text="${response.objectiveValue}"></strong></p></div>
+        </div>
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+            <tr><th>Estudiante</th><th>Tutor asignado</th><th>Área temática</th><th>Score (prioridad × riesgo)</th></tr>
+            </thead>
+            <tbody>
+            <tr th:each="a : ${assignments}">
+                <td th:text="${a.studentName}"></td>
+                <td th:text="${a.tutorName}"></td>
+                <td th:text="${a.topic}"></td>
+                <td th:text="${a.score}"></td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(assignments)}"><td colspan="4" class="text-center text-muted">No hay asignaciones posibles</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <a class="btn btn-secondary" th:href="@{/}">Volver</a>
+</div>
+</body>
+</html>

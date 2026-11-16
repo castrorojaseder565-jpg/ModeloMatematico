@@ -1,0 +1,30 @@
+{
+  "status": "Optimal",
+  "objectiveValue": 107.0,
+  "assignments": [
+    {
+      "studentId": 1,
+      "studentName": "Ana García",
+      "tutorId": 1,
+      "tutorName": "Carlos Ruiz",
+      "topic": "Matemáticas",
+      "score": 36
+    },
+    {
+      "studentId": 2,
+      "studentName": "Luis Pérez",
+      "tutorId": 2,
+      "tutorName": "Sandra Mora",
+      "topic": "Física",
+      "score": 21
+    },
+    {
+      "studentId": 3,
+      "studentName": "María López",
+      "tutorId": 1,
+      "tutorName": "Carlos Ruiz",
+      "topic": "Matemáticas",
+      "score": 50
+    }
+  ]
+}

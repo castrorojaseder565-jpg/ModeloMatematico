@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/layout :: head('Estudiante')}"></head>
+<body>
+<nav th:replace="~{fragments/layout :: nav}"></nav>
+<div class="container" style="max-width:640px">
+    <h2 th:text="${student.id == null} ? 'Nuevo estudiante' : 'Editar estudiante'">Estudiante</h2>
+    <form th:action="@{/students/save}" th:object="${student}" method="post" class="mt-3">
+        <input type="hidden" th:field="*{id}">
+        <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input th:field="*{name}" class="form-control">
+            <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Área temática</label>
+            <input th:field="*{topic}" class="form-control" placeholder="Ej.: Matemáticas">
+            <span th:if="${#fields.hasErrors('topic')}" th:errors="*{topic}" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Riesgo académico (1–5)</label>
+            <input th:field="*{academicRisk}" class="form-control" type="number" min="1" max="5">
+            <span th:if="${#fields.hasErrors('academicRisk')}" th:errors="*{academicRisk}" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Prioridad de atención (1–10)</label>
+            <input th:field="*{priority}" class="form-control" type="number" min="1" max="10">
+            <span th:if="${#fields.hasErrors('priority')}" th:errors="*{priority}" class="text-danger"></span>
+        </div>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+        <a class="btn btn-secondary" th:href="@{/students}">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>
